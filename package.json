@@ -1,0 +1,27 @@
+{
+  "name": "noderedis",
+  "version": "1.0.0",
+  "description": "Brad Traversy course on Y00T000B",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpk75234/noderedis.git"
+  },
+  "author": "ME",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpk75234/noderedis/issues"
+  },
+  "homepage": "https://github.com/mpk75234/noderedis#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "expres": "0.0.5",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "method-override": "^3.0.0",
+    "redis": "^2.8.0"
+  }
+}
