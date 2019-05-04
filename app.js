@@ -28,8 +28,30 @@ app.use(bodyParser.urlencoded({extended: false}));
 //method-override
 app.use(methodOverride('_method'));
 
-app.get('/', function(req,res,next){
+app.get('/user/search', function(req,res,next){
     res.render('searchusers.handlebars');
+});
+app.get('/user/add', function(req,res,next){
+    res.render('adduser.handlebars');
+});
+app.post('/user/add', function(req,res,next){
+    let id = req.body.id;
+    let first_name = req.body.first_name;
+    let last_name = req.body.last_name;
+    let email = req.body.email;
+    let phone = req.body.phone;
+    client.hmset(id, [
+        'first_name', first_name,
+        'last_name', last_name,
+        'email', email,
+        'phone', phone
+    ], function(err, reply){
+        if(err){
+            console.log(err);
+        }
+        console.log(reply);
+        res.redirect('/user/search');
+    });
 });
 //search processing
 app.post('/user/search', function(req, res){
